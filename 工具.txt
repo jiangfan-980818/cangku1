@@ -1,0 +1,25 @@
+/home/ytw007/Android_Build_CS/android/vendor/qcom/proprietary/chi-cdk/vendor/topology/qcom/K80129AA1
+/home/ytw007/Android_Build_CS/android/out/target/product/K80129AA1/obj/SHARED_LIBRARIES
+
+cd ~/Android_Build_CS/android/ && source build/envsetup.sh && lunch K80129AA1-userdebug && mmm vendor/qcom/proprietary/camx
+cd ~/Android_Build_CS/android/ && source build/envsetup.sh && lunch K80129AA1-userdebug && mmm vendor/qcom/proprietary/chi-cdk
+/vendor/lib64/hw/
+
+
+C/C++ : LOG_TAG
+ 
+adb logcat -s ACameraCaptureSession ACameraDevice ACameraManager ACameraMetadata Camera-JNI CameraMetadata-JNI DngCreator_JNI Legacy-CameraDevice-JNI Camera2-Legacy-PerfMeasurement-JNI ApEaselMetadataManager Camera2-CallbackProcessor Camera Camera2Client Camera2ClientBase Camera3-BufferManager Camera3-Device Camera3-DummyStream Camera3-InputStream Camera3-IOStreamBase Camera3-OutputStream Camera3-Stream Camera3StreamSplitter CameraBase CameraClient CamDev@1.0-impl CamDev@3.2-impl CamDev@3.3-impl CamDev@3.4-impl CameraDeviceClient CamDevSession@3.2-impl CamDevSession@3.3-impl CamDevSession@3.4-impl CameraFlashlight DefaultCameraHAL UsbCameraHAL
+
+今天任务 
+1：切换不同usecase，不使用usecaseZSL。
+2：不选择feature，或者选择其他feature。
+3：创建其他pipeline
+4：激活其他pipeline
+5：streamon不打开会怎么样。
+6：node的添加/删除，结合日志看是否成功
+今天HAL任务，分析稳定性问题：
+1：人为制造空指针，解决分析crash崩溃问题，熟悉addr2line工具使用。
+2：打开相机流程中，人为制造异常，或return，分析打开相机失败问题。
+3：kill camera provider进程，分析相关日志。
+4：人为修改configure stream参数，或延时操作，制造打开相机白屏/黑屏现象，分析日志。
+
